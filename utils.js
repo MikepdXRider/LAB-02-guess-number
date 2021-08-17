@@ -10,4 +10,3 @@ export function disableButtonAndInput(element1, element2) {
     element1.disabled = true;
     element2.disabled = true;
 }
-

@@ -42,5 +42,5 @@
     - Compare user input to correct answer.
     - Set view/dom to reflect.
         - If win/loss: 
-            - hide elements: numberOfTries, tooHighorLow, and button.
+            - disable elements: numberOfTries, tooHighorLow, and button.
             - display: win or lose to dom, reset button.
