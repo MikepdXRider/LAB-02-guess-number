@@ -13,7 +13,7 @@
  - `<p>` to display rules
  - `<input>` to recieve user input
  - `<button>` to begin  read state- set view cycle.
- - 3x `<div>` or `<p>` to display number of tries, wether guess is too high or low, and if lose or win.
+ - 2x `<div>` or `<p>` to display number of tries, wether guess is too high or low and if lose or win.
 
  ## State
  `let correctAnswer = 0;`
@@ -40,4 +40,7 @@
  - click ->
     - Read user input
     - Compare user input to correct answer.
-    - Set view/dom to reflect
+    - Set view/dom to reflect.
+        - If win/loss: 
+            - hide elements: numberOfTries, tooHighorLow, and button.
+            - display: win or lose to dom, reset button.
