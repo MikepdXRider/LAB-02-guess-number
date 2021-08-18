@@ -18,8 +18,8 @@
  ## State
  `let correctAnswer = 0;`
  `let numberOfTries = 0;`
- `let tooHighorLow = 0;`
- `let winOrLose = 0;`
+ `let numberofWins = 0;`
+ `let numberoflosses = 0;`
 
  ## FUNctions
 - TDD a `compareNumbers()`:
@@ -37,10 +37,14 @@
     - Returns a random number between 0 and 20.
 
  ## Events 
- - click ->
+ - click "guess" ->
     - Read user input
     - Compare user input to correct answer.
     - Set view/dom to reflect.
         - If win/loss: 
-            - disable elements: numberOfTries, tooHighorLow, and button.
+            - disable elements: input and guess button.
             - display: win or lose to dom, reset button.
+- click "reset" ->
+    - enable: guess button and input.
+    - reset: numberOfTries, output text
+    - hide: reset button
