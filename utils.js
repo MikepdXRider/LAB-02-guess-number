@@ -21,8 +21,8 @@ export function displayWinMessage(element){
     element.textContent = 'You guessed right! Good job!';
 }
 
-export function displayLoseMessage(element){
-    element.textContent = 'You\'re all out of guesses. Hit reset to try again!';
+export function displayLoseMessage(element, number){
+    element.textContent = `You\'re all out of guesses. The correct number was ${number}.`;
 }
 
 export function displayResetMessage(element){

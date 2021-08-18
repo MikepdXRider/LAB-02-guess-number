@@ -59,7 +59,7 @@ guessButtonEl.addEventListener('click', () => {
 
     if (remainingTries === 0) {
         disableButtonAndInput(guessButtonEl, userInputEl);
-        displayLoseMessage(outputTextEl);
+        displayLoseMessage(outputTextEl, correctAnswer);
         numberOfLosses++;
         updateWinLossTotalGuessCounter(winLossTrackerEl, numberOfWins, numberOfLosses, totalGuessCounter);
         resetButtonEl.style.display = 'block';
@@ -73,5 +73,6 @@ resetButtonEl.addEventListener('click', () =>{
     guessButtonEl.disabled = false;
     userInputEl.disabled = false;
     remainingTries = 3;
+    remainingTriesEl.textContent = `Remaining Tries: ${remainingTries}`;
     displayResetMessage(outputTextEl);
 });
