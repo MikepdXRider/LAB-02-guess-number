@@ -13,11 +13,6 @@
 </head>
 
 <body>
-    <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
-    </header>
     <main>
         <section class="main-section">
             <img class="main-logo" src="./assets/alchemy-logo.png" />
@@ -28,7 +23,7 @@
                 <h3>How to play:</h3>
                 <ul>
                     <li>You have three attempts to guess the right number.</li>
-                    <li>Input a whole number between 0 and 20.</li>
+                    <li>Input a whole number between, and including, the numbers 1 and 20.</li>
                     <li>Press the 'guess' button.</li>
                     <li>If you guess incorrectly, review the hint before trying again!</li>
                 </ul>
@@ -41,11 +36,9 @@
             </article>
             <article class="user-feedback-container">
                 <div id="remaining-tries">Remaining Tries: 3</div>
-                <p id="output-text" ></p>
-                <p id="win-loss-tracker">Number of (Wins : Losses : Total Guesses): 0 : 0 : 0</p>
-            </article>
-            <article class="button-container">
+                <p id="output-text" >Ready to play? Take a guess!</p>
                 <button class="reset-button" id="reset-button">Reset</button>
+                <p id="win-loss-tracker">Number of (Wins : Losses : Total Guesses): 0 : 0 : 0</p>
             </article>
         </section>
     </main>

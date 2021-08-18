@@ -1,6 +1,9 @@
 // import functions and grab DOM elements
-import { compareNumbers, disableButtonAndInput, displayTooHighMessage, displayTooLowMessage, displayWinMessage, displayLoseMessage, displayResetMessage, updateWinLossTotalGuessCounter } from './utils.js';
+import { compareNumbers, disableButtonAndInput, displayTooLowMessage, updateWinLossTotalGuessCounter } from './utils.js';
+import { displayTooHighMessage, displayWinMessage, displayLoseMessage, displayResetMessage } from './utils.js';
 
+const winLossTrackerEl = document.getElementById('win-loss-tracker');
+const outputTextEl = document.getElementById('output-text');
 const userInputEl = document.getElementById('input');
 const guessButtonEl = document.getElementById('guess-button');
 const remainingTriesEl = document.getElementById('remaining-tries');
@@ -34,31 +37,31 @@ guessButtonEl.addEventListener('click', () => {
     let highOrLow = compareNumbers(userGuess, correctAnswer);
 
     totalGuessCounter++;
-    updateWinLossTotalGuessCounter(numberOfWins, numberOfLosses, totalGuessCounter);
+    updateWinLossTotalGuessCounter(winLossTrackerEl, numberOfWins, numberOfLosses, totalGuessCounter);
 
     decrimentAndDisplayRemainingTries();
     
     if (highOrLow === 0){
         disableButtonAndInput(guessButtonEl, userInputEl);
-        displayWinMessage();
+        displayWinMessage(outputTextEl);
         numberOfWins++;
-        updateWinLossTotalGuessCounter(numberOfWins, numberOfLosses, totalGuessCounter);
+        updateWinLossTotalGuessCounter(winLossTrackerEl, numberOfWins, numberOfLosses, totalGuessCounter);
         resetButtonEl.style.display = 'block';
     }
 
     if (highOrLow === 1){
-        displayTooHighMessage();
+        displayTooHighMessage(outputTextEl);
     }
   
     if (highOrLow === -1){
-        displayTooLowMessage();
+        displayTooLowMessage(outputTextEl);
     }
 
     if (remainingTries === 0) {
         disableButtonAndInput(guessButtonEl, userInputEl);
-        displayLoseMessage();
+        displayLoseMessage(outputTextEl);
         numberOfLosses++;
-        updateWinLossTotalGuessCounter(numberOfWins, numberOfLosses, totalGuessCounter);
+        updateWinLossTotalGuessCounter(winLossTrackerEl, numberOfWins, numberOfLosses, totalGuessCounter);
         resetButtonEl.style.display = 'block';
     }
 });
@@ -70,5 +73,5 @@ resetButtonEl.addEventListener('click', () =>{
     guessButtonEl.disabled = false;
     userInputEl.disabled = false;
     remainingTries = 3;
-    displayResetMessage();
+    displayResetMessage(outputTextEl);
 });
