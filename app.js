@@ -25,6 +25,7 @@ function generateRanNum(){
     return Math.floor(Math.random() * 20) + 1;
 }
 
+console.log(correctAnswer);
 function decrimentAndDisplayRemainingTries(){
     remainingTries--;
     remainingTriesEl.textContent = `Remaining Tries: ${remainingTries}`;
@@ -75,4 +76,6 @@ resetButtonEl.addEventListener('click', () =>{
     remainingTries = 3;
     remainingTriesEl.textContent = `Remaining Tries: ${remainingTries}`;
     displayResetMessage(outputTextEl);
+    correctAnswer = generateRanNum();
+    console.log(correctAnswer);
 });
