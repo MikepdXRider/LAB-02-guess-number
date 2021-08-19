@@ -46,3 +46,10 @@ test('input high number expect -1', (expect) => {
 });
 
 
+test('input number with decimal, expect error', (assert) => {
+
+    // Requires a callback which calls function as first parameter.
+    assert.throws(() => compareNumbers(1.1, 1));
+});
+
+

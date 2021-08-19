@@ -1,7 +1,11 @@
 export function compareNumbers(guess, correctNumber) {
-    if (guess === correctNumber) return 0;
-    if (guess > correctNumber) return 1;
-    if (guess < correctNumber) return -1;
+    if (Number.isInteger(guess) === false) {
+        throw new Error('You must input a whole number.');
+    } else {
+        if (guess === correctNumber) return 0;
+        if (guess > correctNumber) return 1;
+        if (guess < correctNumber) return -1;
+    }
 }
 
 export function disableButtonAndInput(element1, element2) {

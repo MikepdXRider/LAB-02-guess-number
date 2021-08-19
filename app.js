@@ -77,5 +77,4 @@ resetButtonEl.addEventListener('click', () =>{
     remainingTriesEl.textContent = `Remaining Tries: ${remainingTries}`;
     displayResetMessage(outputTextEl);
     correctAnswer = generateRanNum();
-    console.log(correctAnswer);
 });
